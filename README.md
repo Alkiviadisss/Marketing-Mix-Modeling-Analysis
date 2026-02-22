@@ -1,10 +1,10 @@
-# 📊 Advertising Channel Analysis
+#  Advertising Channel Analysis
 
 A data-driven analysis of advertising spend across **TV**, **Radio**, and **Newspaper** channels, using linear regression to model the relationship between ad spend and sales performance.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ├── project_business.py       # Main analysis script
@@ -14,7 +14,7 @@ A data-driven analysis of advertising spend across **TV**, **Radio**, and **News
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 ```bash
 pip install pandas numpy matplotlib scikit-learn
@@ -22,7 +22,7 @@ pip install pandas numpy matplotlib scikit-learn
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 Run the script and follow the interactive prompts:
 
@@ -41,7 +41,7 @@ The script walks through four stages, each triggered by a `Y/N` input:
 
 ---
 
-## 📊 Key Results
+##  Key Results
 
 ### 1. Return on Ad Spend (ROAS)
 
@@ -71,7 +71,7 @@ The model deviates by an average of **1.83 units** out of 15,130 total — an er
 
 ---
 
-## 💡 Strategic Recommendations
+##  Strategic Recommendations
 
 1. **Prioritize Radio** — highest ROAS (0.544), low risk, strong ROI
 2. **Maintain TV** — strongest sales correlation, ideal for volume and brand stability
@@ -79,7 +79,7 @@ The model deviates by an average of **1.83 units** out of 15,130 total — an er
 
 ---
 
-## 📄 Presentation
+##  Presentation
 
 A full PowerPoint presentation (`Advertising_Channel_Analysis.pptx`) summarizing all findings is included, covering:
 
