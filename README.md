@@ -7,7 +7,7 @@ A data-driven analysis of advertising spend across **TV**, **Radio**, and **News
 ##  Project Structure
 
 ```
-├── project_business.py       # Main analysis script
+├── Analysis_Script.py        # Main analysis script
 ├── advertising.csv           # Dataset (200 observations)
 └── README.md                 # This file
 ```
@@ -27,7 +27,7 @@ pip install pandas numpy matplotlib scikit-learn
 Run the script and follow the interactive prompts:
 
 ```bash
-python project_business.py
+python Analysis_Script.py
 ```
 
 The script walks through four stages, each triggered by a `Y/N` input:
