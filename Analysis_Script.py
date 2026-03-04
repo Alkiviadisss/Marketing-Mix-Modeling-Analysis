@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import streamlit as st
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import xlabel
@@ -10,20 +11,39 @@ from sklearn.metrics import mean_absolute_error
 df = pd.read_csv("advertising.csv")
 
 # --- Data Cleaning & Organization ---#
-Question = input("Print Data Cleaning Results? Y/N")
+Question = input("Print Data Cleaning Results Y/N")
 if Question == "Y":
-   print(df.head())
+   Q1 = df.quantile(0.25)
+   Q3 = df.quantile(0.75)
+   IQR = Q3 - Q1
+   lower_bound = Q1 - 1.5 * IQR
+   upper_bound = Q3 + 1.5 * IQR
+   outliers_count = ((df < lower_bound) | (df > upper_bound)).sum()
+   show_outliers = ((df < lower_bound) | (df > upper_bound))
+   print(f"Outliers: {outliers_count}")
+   print(df[show_outliers.any(axis=1)])
    print(df.isnull().sum())
+   print(df.duplicated().sum())
+else:
+   pass
+
+# --- Data Analysis (EDA) ---#
+# Descriptive Analysis
+Question1 = input("Print Descriptive Analysis Y/N")
+if Question1 == "Y":
+   print(df.head())
    print (df.describe())
+   print(df.shape)
+   print(df.info)
    Total_Spending = (df['TV'] + df['Radio'] + df['Newspaper']).sum()
    print("Total Spending In Thousands is : ", Total_Spending)
 else:
     pass
 
-# --- Data Analysis (EDA) ---#
+# Inferential Analysis
 # Bar Plot To Explore The Data
-Question1 = input("Print Plots? Y/N")
-if Question1 == "Y":
+Question2 = input("Print Plots? Y/N")
+if Question2 == "Y":
    Category_Totals = df[['TV', 'Radio', 'Newspaper']].sum()
    Spending_plot = plt.bar(Category_Totals.index, Category_Totals.values, color=['#3498db', '#e67e22', '#2ecc71'])
    plt.title('Total Spending in Each Category')
@@ -33,8 +53,8 @@ else:
    pass
 
 # Correlations
-Question2 = input("Print Correlations & Heatmap? Y/N")
-if Question2 == "Y":
+Question3 = input("Print Correlations & Heatmap? Y/N")
+if Question3 == "Y":
    R = df[['TV', 'Radio', 'Newspaper', 'Sales']].corr()
    print("Correlation Coefficient Matrix: ", R)
    heatmap_plt = plt.imshow(R)
@@ -44,8 +64,8 @@ else:
    pass
 
 # Linear Regression Model
-Question3 = input("Print Regression Model & Corrrelations(R,R2) Y/N")
-if Question3 == "Y":
+Question4 = input("Print Regression Model & Corrrelations(R,R2) Y/N")
+if Question4 == "Y":
    R = df[['TV', 'Radio', 'Newspaper', 'Sales']].corr()
    x = df["TV"].to_numpy().reshape(-1, 1)
    y = df["Sales"].to_numpy().reshape(-1, 1)
