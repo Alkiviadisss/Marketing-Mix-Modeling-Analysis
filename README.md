@@ -34,10 +34,11 @@ The script walks through four stages, each triggered by a `Y/N` input:
 
 | Prompt | What it does |
 |--------|-------------|
-| `Print Data Cleaning Results?` | Shows head, null checks, descriptive stats, and total spend |
+| `Print Data Cleaning Results?` | Shows IQR outliers, null checks, and duplicated rows. |
+| `Print Descriptive Analysis?` | Shows head, describe, and Total Spending per channel. |
 | `Print Plots?` | Bar chart of total spend per channel |
 | `Print Correlations & Heatmap?` | Correlation matrix + heatmap |
-| `Print Regression Model & Correlations?` | Linear regression (TV → Sales), R, R², scatter plot |
+| `Print Regression Model & Correlations?` | Linear regression (TV → Sales), R, R², MAE, scatter plot |
 
 ---
 
