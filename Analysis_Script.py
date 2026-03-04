@@ -21,6 +21,7 @@ if Question == "Y":
    show_outliers = ((df < lower_bound) | (df > upper_bound))
    print(f"Outliers: {outliers_count}")
    print(df[show_outliers.any(axis=1)])
+   df.drop(df[show_outliers.any(axis=1)].index)
    print(df.isnull().sum())
    print(df.duplicated().sum())
 else:
@@ -94,4 +95,5 @@ else:
 #   for every 1000$ we spend on advertising in Newspaper, we sell 236 units (Weak Connection)  (High Risk / Irrelevant)
 #3) MAE = 1.8305872641932412
 #   for the total 15.130 units, the model falls down 1.830 units
+
 
