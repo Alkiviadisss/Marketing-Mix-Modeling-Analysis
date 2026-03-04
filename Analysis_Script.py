@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import streamlit as st
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import xlabel
@@ -95,3 +94,4 @@ else:
 #   for every 1000$ we spend on advertising in Newspaper, we sell 236 units (Weak Connection)  (High Risk / Irrelevant)
 #3) MAE = 1.8305872641932412
 #   for the total 15.130 units, the model falls down 1.830 units
+
